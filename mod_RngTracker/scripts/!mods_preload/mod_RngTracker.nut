@@ -13,7 +13,7 @@
 ::ModRngTracker.numberofattacksai <- 0;
 
 
-
+::logInfo("test for github");
 
 
 
