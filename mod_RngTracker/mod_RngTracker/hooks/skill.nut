@@ -5,14 +5,14 @@
 		
 		local playercontrolled = _user.m.IsControlledByPlayer;
 
+		//////
+		
 		if (playercontrolled) {
-			::ModRngTracker.expectedsumplayer += this.getHitchance(_targetEntity) / 100;
-			::logInfo("fetched hitchance: " +  this.getHitchance(_targetEntity) / 100);
-			::logInfo("new expectedPlayer: " +  ::ModRngTracker.expectedsumplayer);
-			::ModRngTracker.numberofattacksplayer += 1;
+			::ModRngTracker.expectedSumPlayer += this.getHitchance(_targetEntity) / 100.0;
+			::ModRngTracker.numberOfAttacksPlayer += 1;
 		} else {
-			::ModRngTracker.expectedsumai += this.getHitchance(_targetEntity) / 100;
-			::ModRngTracker.numberofattacksai += 1;
+			::ModRngTracker.expectedSumAi +=  this.getHitchance(_targetEntity) / 100.0; //this.getHitchance(_targetEntity) / 100;
+			::ModRngTracker.numberOfAttacksAi += 1;
 		}
 
 
@@ -20,9 +20,9 @@
 
 
 		if (playercontrolled) {
-			if (ret) ::ModRngTracker.successcountplayer += 1;
+			if (ret) ::ModRngTracker.successCountPlayer += 1;
 		} else {
-			if (ret) ::ModRngTracker.successcountai += 1;
+			if (ret) ::ModRngTracker.successCountAi += 1;
 		}
 
 		return ret;
@@ -32,3 +32,5 @@
 
 
 });
+
+
