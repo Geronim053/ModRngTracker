@@ -5,12 +5,12 @@
 }
 ::ModRngTracker.modthingy <- ::Hooks.register(::ModRngTracker.ID, ::ModRngTracker.Version, ::ModRngTracker.Name);
  
-::ModRngTracker.successcountplayer <- 0;
-::ModRngTracker.successcountai <- 0;
-::ModRngTracker.expectedsumplayer <- 0;
-::ModRngTracker.expectedsumai <- 0;
-::ModRngTracker.numberofattacksplayer <- 0;
-::ModRngTracker.numberofattacksai <- 0;
+::ModRngTracker.successCountPlayer <- 0.0;
+::ModRngTracker.successCountAi <- 0.0;
+::ModRngTracker.expectedSumPlayer <- 0.0;
+::ModRngTracker.expectedSumAi <- 0.0;
+::ModRngTracker.numberOfAttacksPlayer <- 0.0;
+::ModRngTracker.numberOfAttacksAi <- 0.0;
 
 
 
