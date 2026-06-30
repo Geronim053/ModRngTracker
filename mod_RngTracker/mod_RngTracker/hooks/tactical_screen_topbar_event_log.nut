@@ -3,7 +3,7 @@
 
 	q.log_newline = @(__original) {function log_newline(){
 
-		::MSU.Log.printStackTrace( );
+		
 
 		
 		local i = 1; 
