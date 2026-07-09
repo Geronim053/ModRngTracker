@@ -3,7 +3,7 @@
 	q.attackEntity = @(__original) {function attackEntity(_user, _targetEntity, _allowDiversion = true){
 
 		
-		local playercontrolled = _user.m.IsControlledByPlayer;
+		local playercontrolled = _user.isPlayerControlled();
 
 		//////
 		

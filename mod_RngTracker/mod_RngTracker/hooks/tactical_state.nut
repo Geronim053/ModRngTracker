@@ -7,7 +7,7 @@
 		::ModRngTracker.expectedSumPlayer = 0.0;
 		::ModRngTracker.expectedSumAi = 0.0;
 		::ModRngTracker.numberOfAttacksPlayer = 0;
-		::ModRngTracker.numberOfAttacksAi =0;
+		::ModRngTracker.numberOfAttacksAi = 0;
 		::ModRngTracker.diceRollSumPlayer = 0;
 		::ModRngTracker.diceRollSumAi = 0;
 		::ModRngTracker.lastDiceRoll = 0;
