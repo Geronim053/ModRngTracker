@@ -29,7 +29,8 @@
 	
 	::include("mod_RngTracker/hooks/skill");
 	::include("mod_RngTracker/hooks/tactical_state");
-	::include("mod_RngTracker/hooks/tactical_screen_topbar_event_log");
+	//::include("mod_RngTracker/hooks/tactical_screen_topbar_event_log");	dead file
+	::include("mod_RngTracker/hooks/actor");
 	
 
 }, ::Hooks.QueueBucket.Late);
