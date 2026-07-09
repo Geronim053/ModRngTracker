@@ -13,7 +13,7 @@
 ::ModRngTracker.numberOfAttacksAi <- 0;
 ::ModRngTracker.diceRollSumPlayer <- 0;
 ::ModRngTracker.diceRollSumAi <- 0;
-::ModRngTracker.lastDiceRoll <- 0;
+//::ModRngTracker.lastDiceRoll <- 0;
 
 
 
