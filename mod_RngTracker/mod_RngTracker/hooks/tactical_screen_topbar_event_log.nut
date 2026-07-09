@@ -1,6 +1,6 @@
 ::ModRngTracker.modthingy.hook("scripts/ui/screens/tactical/modules/topbar/tactical_screen_topbar_event_log", function(q){
 	
-
+	//just a dead file for MV. Ill leave it in here for now
 	q.log_newline = @(__original) {function log_newline(){
 
 		

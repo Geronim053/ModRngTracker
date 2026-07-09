@@ -1,38 +1,40 @@
-::ModRngTracker.modthingy.hookTree("scripts/skills/skill", function(q){
+::ModRngTrackerMV.modthingy.hookTree("scripts/skills/skill", function(q){
 
-	q.attackEntity = @(__original) {function attackEntity(_user, _targetEntity, _allowDiversion = true){
+	q.MV_onAttackRolled = @(__original) { function MV_onAttackRolled(_attackInfo){
+		
+		local ret = __original(_attackInfo);
 
 		
-		local playercontrolled = _user.m.IsControlledByPlayer;
 
-		//////
-		
-		if (playercontrolled) {
-			::ModRngTracker.expectedSumPlayer += this.getHitchance(_targetEntity) / 100.0;
-			::ModRngTracker.numberOfAttacksPlayer += 1;
+		if (_attackInfo.User.isPlayerControlled()) {
+			::ModRngTrackerMV.expectedSumPlayer += _attackInfo.ChanceToHit / 100.0;
+			::ModRngTrackerMV.numberOfAttacksPlayer += 1;
+			::ModRngTrackerMV.diceRollSumPlayer += _attackInfo.Roll;
 		} else {
-			::ModRngTracker.expectedSumAi +=  this.getHitchance(_targetEntity) / 100.0; 
-			::ModRngTracker.numberOfAttacksAi += 1;
-		}
-
-
-		local ret = __original(_user, _targetEntity, _allowDiversion);
-
-
-		if (playercontrolled) {
-			if (ret) ::ModRngTracker.successCountPlayer += 1;
-			::ModRngTracker.diceRollSumPlayer += ::ModRngTracker.lastDiceRoll;
-		} else {
-			if (ret) ::ModRngTracker.successCountAi += 1;
-			::ModRngTracker.diceRollSumAi += ::ModRngTracker.lastDiceRoll;
+			::ModRngTrackerMV.expectedSumAi +=  _attackInfo.ChanceToHit / 100.0; 
+			::ModRngTrackerMV.numberOfAttacksAi += 1;
+			::ModRngTrackerMV.diceRollSumAi += _attackInfo.Roll;
 		}
 
 		return ret;
-	}}.attackEntity;
 
+	
+	}}.MV_onAttackRolled;
 
+	q.MV_onAttackEntityHit = @(__original) { function MV_onAttackEntityHit( _attackInfo ) {
 
+		if (_attackInfo.User.isPlayerControlled()) {
+			
+			::ModRngTrackerMV.successCountPlayer += 1;
+			
+		} else {
+			
+			::ModRngTrackerMV.successCountAi += 1;
+		}
 
+		return __original(_attackInfo);
+
+	}}.MV_onAttackEntityHit;
 
 });
 
