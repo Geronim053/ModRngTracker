@@ -23,9 +23,9 @@
 ::ModRngTracker.modthingy.require("mod_msu");
 
 ::ModRngTracker.modthingy.queue(">mod_msu", function(){
-
+	//need to check e.g. autopilot_new
 	::ModRngTracker.Mod <- ::MSU.Class.Mod(::ModRngTracker.ID, ::ModRngTracker.Version, ::ModRngTracker.Name);
-	::ModRngTracker.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-public");
+	::ModRngTracker.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Geronim053/ModRngTracker");
 	::ModRngTracker.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 	
 	::include("mod_RngTracker/hooks/skill");
