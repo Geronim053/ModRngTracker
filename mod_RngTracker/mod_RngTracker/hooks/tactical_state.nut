@@ -50,7 +50,7 @@
 			::World.Flags.set("diceRollSumAi", ::World.Flags.get("diceRollSumAi") + ::ModRngTracker.diceRollSumAi);
 
 
-		} else {	//if we hooked worldstate, I could at least eliminate this fucking portion
+		} else {	//if we hooked worldstate, I could at least eliminate this fucking portion; kinda done, might eliminate
 			::World.Flags.set("successCountPlayer", ::ModRngTracker.successCountPlayer);
 			::World.Flags.set("expectedSumPlayer", ::ModRngTracker.expectedSumPlayer);
 			::World.Flags.set("numberOfAttacksPlayer", ::ModRngTracker.numberOfAttacksPlayer);
