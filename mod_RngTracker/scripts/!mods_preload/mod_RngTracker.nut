@@ -25,7 +25,8 @@
 ::ModRngTracker.modthingy.queue(">mod_msu", function(){
 
 	::ModRngTracker.Mod <- ::MSU.Class.Mod(::ModRngTracker.ID, ::ModRngTracker.Version, ::ModRngTracker.Name);
-	
+	::ModRngTracker.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-public");
+	::ModRngTracker.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 	
 	::include("mod_RngTracker/hooks/skill");
 	::include("mod_RngTracker/hooks/tactical_state");
