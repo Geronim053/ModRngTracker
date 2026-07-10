@@ -5,7 +5,7 @@
 
 		
 
-		
+		/*
 		local i = 1; 
 		local stackinfos = getstackinfos(i);
 		local boolSkillWasInvolved = false;
@@ -27,6 +27,9 @@
 		} 
 		while (stackinfos != null);		
 		if ((stackinfos == null) && boolSkillWasInvolved) ::logWarning("(RngTracker:) something might have gone wrong; no function of 'skill' with r found.");
+		*/
+		local stackinfos = ::ModRngTracker.findAttackEntity();
+		if (!stackinfos == null) ::ModRngTracker.lastDiceRoll = stackinfos.locals.r;		// we would probably need a safety-check for that.
 
 		local ret = __original();
 
