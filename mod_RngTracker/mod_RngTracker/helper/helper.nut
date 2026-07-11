@@ -1,27 +1,27 @@
-::ModRngTracker <- function findAttackEntity(){
+::ModRngTracker.findAttackEntity <- function (){
 	local i = 1; 
-		local stackinfos = getstackinfos(i);
-		local boolSkillWasInvolved = false;
+	local stackinfos = getstackinfos(i);
+	local boolSkillWasInvolved = false;
+	
+	do 
+	{
 		
-		do 
+		if (::MSU.isKindOf(stackinfos.locals["this"], "skill"))
 		{
-			
-			if (::MSU.isKindOf(stackinfos.locals["this"], "skill"))
+			boolSkillWasInvolved = true;
+			if ("r" in stackinfos.locals)
 			{
-				boolSkillWasInvolved = true;
-				if ("r" in stackinfos.locals)
-				{
-					//::ModRngTracker.lastDiceRoll = stackinfos.locals.r;
-					break;
-				}
+				//::ModRngTracker.lastDiceRoll = stackinfos.locals.r;
+				break;
 			}
-			i++;
-			stackinfos = getstackinfos(i);
-		} 
-		while (stackinfos != null);		
-		if ((stackinfos == null) && boolSkillWasInvolved) ::logWarning("(RngTracker:) something might have gone wrong; no function of 'skill' with r found.");
+		}
+		i++;
+		stackinfos = getstackinfos(i);
+	} 
+	while (stackinfos != null);		
+	if ((stackinfos == null) && boolSkillWasInvolved) ::logWarning("(RngTracker:) something might have gone wrong; no function of 'skill' with r found.");
 
-		return stackinfos
+	return stackinfos
 
 
 };
