@@ -29,8 +29,8 @@
 		if ((stackinfos == null) && boolSkillWasInvolved) ::logWarning("(RngTracker:) something might have gone wrong; no function of 'skill' with r found.");
 		*/
 		local stackinfos = ::ModRngTracker.findAttackEntity();
-		if (!stackinfos == null) ::ModRngTracker.lastDiceRoll = stackinfos.locals.r;		// we would probably need a safety-check for that.
-
+		if (!::MSU.isNull(stackinfos)) ::ModRngTracker.lastDiceRoll = stackinfos.locals.r;		
+		
 		local ret = __original();
 
 		return ret;

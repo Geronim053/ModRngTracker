@@ -11,7 +11,7 @@
 			boolSkillWasInvolved = true;
 			if ("r" in stackinfos.locals)
 			{
-				//::ModRngTracker.lastDiceRoll = stackinfos.locals.r;
+				
 				break;
 			}
 		}
@@ -20,8 +20,9 @@
 	} 
 	while (stackinfos != null);		
 	if ((stackinfos == null) && boolSkillWasInvolved) ::logWarning("(RngTracker:) something might have gone wrong; no function of 'skill' with r found.");
+	
 
-	return stackinfos
+	return stackinfos;
 
 
 };
