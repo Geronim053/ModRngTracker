@@ -30,6 +30,7 @@
 	::include("mod_RngTracker/hooks/skill");
 	::include("mod_RngTracker/hooks/tactical_state");
 	::include("mod_RngTracker/hooks/tactical_screen_topbar_event_log");
+	::include("mod_RngTracker/helper/helper")
 	
 
 }, ::Hooks.QueueBucket.Late);
